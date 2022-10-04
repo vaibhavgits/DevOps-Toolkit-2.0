@@ -62,7 +62,7 @@ echo "
 		${ORANGE}| |_| |  __/\ V /| |_| | |_) \__ \   | | (_) | (_) | |   <| | |_ 
 		${GREENS}|____/ \___| \_/  \___/| .__/|___/   |_|\___/ \___/|_|_|\_\_|\__|   
 		${ORANGE}                       |_|                              
-		${ORANGE}                ${RED}Version : 1.0
+		${ORANGE}                ${RED}Version : 2.0
 
 		${GREEN}[${WHITE}-${GREENS}]${GREENS} Tool Created by ${RED}mosthated ${GREENS}(umegbewe nwebedu)${WHITE}
 "
