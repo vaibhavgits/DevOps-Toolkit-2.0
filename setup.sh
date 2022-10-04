@@ -24,9 +24,9 @@
 
 
 ## ANSI colors (FG & BG)
-RED="$(printf '\033[31m')"  GREENS="$(printf '\033[32m')"  ORANGE="$(printf '\033[33m')"  BLUE="$(printf '\033[34m')"
+RED="$(printf '\033[31m')"  GREEN="$(printf '\033[32m')"  ORANGE="$(printf '\033[33m')"  BLUE="$(printf '\033[34m')"
 MAGENTA="$(printf '\033[35m')"  CYAN="$(printf '\033[36m')"  WHITE="$(printf '\033[37m')" BLACK="$(printf '\033[30m')"
-REDBG="$(printf '\033[41m')"  GREENBG="$(printf '\033[42m')"  ORANGEBG="$(printf '\033[43m')"  BLUEBG="$(printf '\033[44m')"
+REDBG="$(printf '\033[41m')"  REDBG="$(printf '\033[42m')"  CYANBG="$(printf '\033[43m')"  BLUEBG="$(printf '\033[44m')"
 MAGENTABG="$(printf '\033[45m')"  CYANBG="$(printf '\033[46m')"  WHITEBG="$(printf '\033[47m')" BLACKBG="$(printf '\033[40m')"
 RESETBG="$(printf '\e[0m\n')"
 
@@ -56,15 +56,15 @@ reset_color() {
 ## banner 
 header() {
 echo "
-		${GREENS} ____              ___              _____           _ _    _ _   
-		${ORANGE}|  _ \  _____   __/ _ \ _ __  ___  |_   _|__   ___ | | | _(_) |_               
-		${GREENS}| | | |/ _ \ \ / / | | | '_ \/ __|   | |/ _ \ / _ \| | |/ / | __|            
-		${ORANGE}| |_| |  __/\ V /| |_| | |_) \__ \   | | (_) | (_) | |   <| | |_ 
-		${GREENS}|____/ \___| \_/  \___/| .__/|___/   |_|\___/ \___/|_|_|\_\_|\__|   
-		${ORANGE}                       |_|                              
-		${ORANGE}                ${RED}Version : 2.0
+		${GREEN} ____              ___              _____           _ _    _ _      ____      ___
+		${CYAN}|  _ \  _____   __/ _ \ _ __  ___  |_   _|__   ___ | | | _(_) |_   /__  \    / _ \              
+		${GREEN}| | | |/ _ \ \ / / | | | '_ \/ __|   | |/ _ \ / _ \| | |/ / | __|    /  /   | | | |           
+		${CYAN}| |_| |  __/\ V /| |_| | |_) \__ \   | | (_) | (_) | |   <| | |_    /  /__ _| |_| | 
+		${GREEN}|____/ \___| \_/  \___/| .__/|___/   |_|\___/ \___/|_|_|\_\_|\__|   |____|(_)\___/  
+		${CYAN}                       |_|                              
+		${GREEN}                ${WHITE}Version : 2.0
 
-		${GREEN}[${WHITE}-${GREENS}]${GREENS} Tool Created by ${RED}mosthated ${GREENS}(umegbewe nwebedu)${WHITE}
+		${CYAN}[${WHITE}-${CYAN}]${CYAN} Tool Created by ${WHITE}mosthated ${GREEN}(umegbewe nwebedu)
 "
 }
 
@@ -72,21 +72,21 @@ echo "
 menu() {
 	{ clear; header; echo; }
 	cat <<- EOF
-		${RED}[${WHITE}::${RED}]${ORANGE} Select a tool to install ${RED}[${WHITE}::${RED}]${ORANGE}
+		${GREEN}[${WHITE}::${GREEN}]${WHITE} Select a tool to install ${GREEN}[${WHITE}::${GREEN}]
 
-		${RED}[${WHITE}01${RED}]${ORANGE} Docker        ${RED}[${WHITE}08${RED}]${ORANGE} AWS Cli   	${RED}[${WHITE}15${RED}]${ORANGE} Nomad
-		${RED}[${WHITE}02${RED}]${ORANGE} Vagrant       ${RED}[${WHITE}09${RED}]${ORANGE} Gcloud Cli      ${RED}[${WHITE}16${RED}]${ORANGE} Ngrok
-		${RED}[${WHITE}03${RED}]${ORANGE} Ansible       ${RED}[${WHITE}10${RED}]${ORANGE} Azure Cli       ${RED}[${WHITE}17${RED}]${ORANGE} Helm
-		${RED}[${WHITE}04${RED}]${ORANGE} Terraform	   ${RED}[${WHITE}11${RED}]${ORANGE} Circleci Cli    ${RED}[${WHITE}18${RED}]${ORANGE} Terragrunt
-		${RED}[${WHITE}05${RED}]${ORANGE} Kubectl	   ${RED}[${WHITE}12${RED}]${ORANGE} Github Cli 	
-		${RED}[${WHITE}06${RED}]${ORANGE} Minikube      ${RED}[${WHITE}13${RED}]${ORANGE} Packer
-		${RED}[${WHITE}07${RED}]${ORANGE} Kind	   ${RED}[${WHITE}14${RED}]${ORANGE} Waypoint
+		${GREEN}[${WHITE}01${GREEN}]${CYAN} Docker        ${GREEN}[${WHITE}08${GREEN}]${CYAN} AWS Cli   	${GREEN}[${WHITE}15${GREEN}]${CYAN} Nomad
+		${GREEN}[${WHITE}02${GREEN}]${CYAN} Vagrant       ${GREEN}[${WHITE}09${GREEN}]${CYAN} Gcloud Cli      ${GREEN}[${WHITE}16${GREEN}]${CYAN} Ngrok
+		${GREEN}[${WHITE}03${GREEN}]${CYAN} Ansible       ${GREEN}[${WHITE}10${GREEN}]${CYAN} Azure Cli       ${GREEN}[${WHITE}17${GREEN}]${CYAN} Helm
+		${GREEN}[${WHITE}04${GREEN}]${CYAN} Terraform	   ${GREEN}[${WHITE}11${GREEN}]${CYAN} Circleci Cli    ${GREEN}[${WHITE}18${GREEN}]${CYAN} Terragrunt
+		${GREEN}[${WHITE}05${GREEN}]${CYAN} Kubectl	   ${GREEN}[${WHITE}12${GREEN}]${CYAN} Github Cli 	
+		${GREEN}[${WHITE}06${GREEN}]${CYAN} Minikube      ${GREEN}[${WHITE}13${GREEN}]${CYAN} Packer
+		${GREEN}[${WHITE}07${GREEN}]${CYAN} Kind	   ${GREEN}[${WHITE}14${GREEN}]${CYAN} Waypoint
 		
-		${RED}[${WHITE}99${RED}]${ORANGE} About         ${RED}[${WHITE}00${RED}]${ORANGE} Exit
+		${GREEN}[${WHITE}99${GREEN}]${CYAN} About         ${GREEN}[${WHITE}00${GREEN}]${CYAN} Exit
 
 		EOF
 		
-	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select an option : ${BLUE}"
+	read -p "${GREEN}[${WHITE}-${GREEN}]${WHITE} Select an option : ${WHITE}"
 		if [[ "$REPLY" == 1 || "$REPLY" == 01 ]]; then
 			docker --version && echo ${RED} "Docker already installed" && sleep 2 && menu || dockerin
 		elif [[ "$REPLY" == 2 || "$REPLY" == 02 ]]; then
@@ -126,19 +126,19 @@ menu() {
 		elif [[ "$REPLY" == 00 || "$REPLY" == 000 ]]; then
 			exit
 		else
-		echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
+		echo -ne "\n${GREEN}[${WHITE}!${GREEN}]${RED} Invalid Option, Try Again..."
 				{ sleep 1; menu; }
 		fi
 }
 
 function dockerin {
 	if [[ `cat /etc/os-release | grep 'Ubuntu\|ID_LIKE=ubuntu'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Ubuntu detected installing docker.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Ubuntu detected installing docker.........."
 	sleep 1
 	sudo apt-get update && sudo apt-get install -y docker.io
 	menu
 	elif [[ `cat /etc/os-release | grep 'ID=debian\|ID_LIKE=debian'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Debian detected installing docker.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Debian detected installing docker.........."
 	sudo apt remove docker docker-engine docker.io && \
 	sudo apt-get update && \
 	sudo apt-get install apt-transport-https ca-certificates software-properties-common curl gnupg lsb-release && \
@@ -148,7 +148,7 @@ function dockerin {
 	sleep 3
 	menu
 	elif [[ `cat /etc/os-release | grep 'Rhel\|ID=centos\|ID_LIKE=rhel'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Yum detected installing docker.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Yum detected installing docker.........."
 	sudo yum remove docker \
              	  docker-client \
                   docker-client-latest \
@@ -170,7 +170,7 @@ function dockerin {
 
 function vagrantin {
 	if [[ `cat /etc/os-release | grep 'Ubuntu\|ID_LIKE=ubuntu\|Debian\|ID_LIKE=debian'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Ubuntu/Debian based detected installing Vagrant.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Ubuntu/Debian based detected installing Vagrant.........."
 	sleep 1
 	curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 	sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && \
@@ -178,7 +178,7 @@ function vagrantin {
 	sleep 3
 	menu
 	elif [[ `cat /etc/os-release | grep 'Rhel\|ID_LIKE=centos\|Centos\|ID_LIKE=rhel'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Yum detected installing Vagrant.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Yum detected installing Vagrant.........."
 	sleep 1
 	sudo yum install -y yum-utils && \
 	sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo && \
@@ -186,7 +186,7 @@ function vagrantin {
 	sleep 3
 	menu
 	elif [[ `cat /etc/os-release | grep 'ID="amzn"'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Yum detected installing Vagrant.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Yum detected installing Vagrant.........."
 	sleep 1
 	sudo yum install -y yum-utils && \
 	sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo && \
@@ -200,7 +200,7 @@ function vagrantin {
 
 function ansiblein {
 	if [[ `cat /etc/os-release | grep 'Ubuntu\|ID_LIKE=ubuntu'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Ubuntu/Debian based detected installing Ansible.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Ubuntu/Debian based detected installing Ansible.........."
 	sleep 1
 	sudo apt install software-properties-common && \
 	sudo add-apt-repository --yes --update ppa:ansible/ansible && \
@@ -222,7 +222,7 @@ function ansiblein {
 
 function terraformin {
 	if [[ `cat /etc/os-release | grep 'Ubuntu\|ID_LIKE=ubuntu\|Debian\|ID_LIKE=debian'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Ubuntu/Debian based detected installing Terraform.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Ubuntu/Debian based detected installing Terraform.........."
 	sleep 1
 	sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl && \
 	curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && \
@@ -231,7 +231,7 @@ function terraformin {
 	sleep 3
 	menu
 	elif [[ `cat /etc/os-release | grep 'Rhel\|ID_LIKE=centos\|Centos\|ID_LIKE=rhel'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Yum detected installing Vagrant.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Yum detected installing Vagrant.........."
 	sleep 1
 	sudo yum install -y yum-utils && \
 	sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo && \
@@ -239,7 +239,7 @@ function terraformin {
 	sleep 3
 	menu
 	elif [[ `cat /etc/os-release | grep 'ID="amzn"'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Yum detected installing Vagrant.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Yum detected installing Vagrant.........."
 	sleep 1
 	sudo yum install -y yum-utils && \
 	sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo && \
@@ -255,7 +255,7 @@ function terraformin {
 
 function kubectlin {
 	if [[ `cat /etc/os-release | grep 'Ubuntu\|ID_LIKE=ubuntu\|Debian\|ID_LIKE=debian'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Ubuntu/Debian based detected installing Kubectl.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Ubuntu/Debian based detected installing Kubectl.........."
 	sleep 1
 	sudo apt-get update && sudo apt-get install -y apt-transport-https ca-certificates curl && \
 	sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg && \
@@ -270,7 +270,7 @@ function kubectlin {
 
 function minikubein {
 	if [[ `cat /etc/os-release | grep 'Ubuntu\|ID_LIKE=ubuntu\|Debian\|ID_LIKE=debian'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Ubuntu/Debian based detected installing Minikube.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Ubuntu/Debian based detected installing Minikube.........."
 	sleep 1
 	curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
 	sudo dpkg -i minikube_latest_amd64.deb && echo ${RED} "Minikube installed!!!"
@@ -283,7 +283,7 @@ function minikubein {
 
 function kindin {
 	if [[ `uname -a | grep "Linux"` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Linux detected installing Kind.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Linux detected installing Kind.........."
 	sleep 1
 	curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.1/kind-linux-amd64 && \
 	sudo chmod +x ./kind && \
@@ -297,7 +297,7 @@ function kindin {
 
 function awsclin {
 	if [[ `uname -a | grep "Linux"` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Linux OS detected installing AWS Cli.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Linux OS detected installing AWS Cli.........."
 	curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip" -o "awscliv2.zip" && \
 	sudo apt-get install unzip && \
 	unzip awscliv2.zip && \
@@ -311,7 +311,7 @@ function awsclin {
 
 function gloudsdkin {
 	if [[ `cat /etc/os-release | grep 'Ubuntu\|ID_LIKE=ubuntu\|Debian\|ID_LIKE=debian'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Ubuntu/Debian based detected installing Gcloud SDK.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Ubuntu/Debian based detected installing Gcloud SDK.........."
 	curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - && \
 	echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
 	sudo apt-get update && sudo apt-get install -y google-cloud-sdk && echo ${RED} "Gcloud SDK installed!!!"
@@ -336,7 +336,7 @@ sudo yum install google-cloud-sdk
 
 function azureclin {
 	if [[ `cat /etc/os-release | grep 'Ubuntu\|ID_LIKE=ubuntu\|Debian\|ID_LIKE=debian'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Ubuntu/Debian based detected installing Azure Cli.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Ubuntu/Debian based detected installing Azure Cli.........."
 	sudo apt-get update && sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg && \
 	curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null && \
 	AZ_REPO=$(lsb_release -cs)
@@ -351,7 +351,7 @@ function azureclin {
 
 function circleclin {
 	if [[ `uname -a | grep "Linux"` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Linux OS detected installing Cirlceci Cli.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Linux OS detected installing Cirlceci Cli.........."
 	curl -fLSs https://raw.githubusercontent.com/CircleCI-Public/circleci-cli/master/install.sh | sudo bash && echo ${RED} "CircleCI Cli installed!!!"
 	sleep 3
 	menu
@@ -362,7 +362,7 @@ function circleclin {
 
 function githubclin {
 	if [[ `cat /etc/os-release | grep 'Ubuntu\|ID_LIKE=ubuntu\|Debian\|ID_LIKE=debian'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Ubuntu/Debian based detected installing Github Cli.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Ubuntu/Debian based detected installing Github Cli.........."
 	curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg && \
 	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null && \
 	sudo apt update && sudo apt install gh && echo ${RED} "Github Cli installed!!!"
@@ -376,14 +376,14 @@ function githubclin {
 
 function packerin {
 	if [[ `cat /etc/os-release | grep 'Ubuntu\|ID_LIKE=ubuntu\|Debian\|ID_LIKE=debian'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Ubuntu/Debian based detected installing Packer.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Ubuntu/Debian based detected installing Packer.........."
 	curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && \
 	sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && \
 	sudo apt-get update && sudo apt-get install packer && echo ${RED} "Packer installed!!!"
 	sleep 3
 	menu
 	elif [[ `cat /etc/os-release | grep 'Rhel\|ID_LIKE=centos\|Centos\|ID_LIKE=rhel'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Yum detected installing Packer.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Yum detected installing Packer.........."
 	sleep 1
 	sudo yum install -y yum-utils && \
 	sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo && \
@@ -391,7 +391,7 @@ function packerin {
 	sleep 3
 	menu
 	elif [[ `cat /etc/os-release | grep 'ID="amzn"'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Yum detected installing Packer.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Yum detected installing Packer.........."
 	sleep 1
 	sudo yum install -y yum-utils && \
 	sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo && \
@@ -406,14 +406,14 @@ function packerin {
 
 function waypointin {
 	if [[ `cat /etc/os-release | grep 'Ubuntu\|ID_LIKE=ubuntu\|Debian\|ID_LIKE=debian'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Ubuntu/Debian based detected installing Waypoint.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Ubuntu/Debian based detected installing Waypoint.........."
 	curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && \
 	sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && \
 	sudo apt-get update && sudo apt-get install waypoint && echo ${RED} "Waypoint installed!!!"
 	sleep 3
 	menu
 	elif [[ `cat /etc/os-release | grep 'Rhel\|ID_LIKE=centos\|Centos\|ID_LIKE=rhel'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Yum detected installing Waypoint.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Yum detected installing Waypoint.........."
 	sleep 1
 	sudo yum install -y yum-utils && \
 	sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo && \
@@ -421,7 +421,7 @@ function waypointin {
 	sleep 3
 	menu
 	elif [[ `cat /etc/os-release | grep 'ID="amzn"'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Yum detected installing Waypoint.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Yum detected installing Waypoint.........."
 	sleep 1
 	sudo yum install -y yum-utils && \
 	sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo && \
@@ -435,14 +435,14 @@ function waypointin {
 
 function nomadin {
 	if [[ `cat /etc/os-release | grep 'Ubuntu\|ID_LIKE=ubuntu\|Debian\|ID_LIKE=debian'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Ubuntu/Debian based detected installing Nomad........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Ubuntu/Debian based detected installing Nomad........."
 	curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && \
 	sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && \
 	sudo apt-get update && sudo apt-get install nomad && echo ${RED} "Nomad installed!!!"
 	sleep 3
 	menu
 	elif [[ `cat /etc/os-release | grep 'Rhel\|ID_LIKE=centos\|Centos\|ID_LIKE=rhel'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Yum detected installing Nomad.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Yum detected installing Nomad.........."
 	sleep 1
 	sudo yum install -y yum-utils && \
 	sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo && \
@@ -450,7 +450,7 @@ function nomadin {
 	sleep 3
 	menu
 	elif [[ `cat /etc/os-release | grep 'ID="amzn"'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Yum detected installing Nomad.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Yum detected installing Nomad.........."
 	sleep 1
 	sudo yum install -y yum-utils && \
 	sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo && \
@@ -464,7 +464,7 @@ function nomadin {
 
 function ngrokin {
 	if [[ `uname -a | grep "Linux"` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Linux OS detected installing Ngrok.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Linux OS detected installing Ngrok.........."
 	sudo apt-get install unzip && wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -o ngrok.zip && \
 	unzip ngrok.zip && \
 	sudo mv ./ngrok /usr/bin/ngrok && echo ${RED} "Ngrok installed!!!"
@@ -477,7 +477,7 @@ function ngrokin {
 
 function helmin {
 	if [[ `cat /etc/os-release | grep 'Ubuntu\|ID_LIKE=ubuntu\|Debian\|ID_LIKE=debian'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Ubuntu/Debian based detected installing Helm.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Ubuntu/Debian based detected installing Helm.........."
 	sleep 1
 	sudo curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
 	sudo apt-get install apt-transport-https -y
@@ -486,21 +486,21 @@ function helmin {
 	sleep 3
 	menu
 	elif [[ `cat /etc/os-release | grep 'Rhel\|ID_LIKE=centos\|Centos\|ID_LIKE=rhel'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Yum detected installing Helm.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Yum detected installing Helm.........."
 	sleep 1
 	sudo curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash && \
 	echo ${RED} "Helm installed!!!"
 	sleep 3
 	menu
 	elif [[ `cat /etc/os-release | grep 'ID="amzn"'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Yum detected installing Helm.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Yum detected installing Helm.........."
 	sleep 1
 	sudo curl -fsSL -o https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash && \
 	echo ${RED} "Helm installed!!!"
 	sleep 3
 	menu
 	elif [[ "$(uname)" == "Darwin" ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Mac OS detected installing Helm.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Mac OS detected installing Helm.........."
 	sleep 1
 	sudo curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 && \
 	echo ${RED} "Helm installed!!!"
@@ -513,28 +513,28 @@ function helmin {
 
 function terragruntin {
 	if [[ `cat /etc/os-release | grep 'Ubuntu\|ID_LIKE=ubuntu\|Debian\|ID_LIKE=debian'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Ubuntu/Debian based detected installing terragrunt.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Ubuntu/Debian based detected installing terragrunt.........."
 	sleep 1
 	curl -o terragrunt https://github.com/gruntwork-io/terragrunt/releases/download/v0.38.6/terragrunt_linux_arm64
 	sudo chmod u+x terragrunt && sudo mv terragrunt /usr/local/bin/terragrunt && echo ${RED} "Terragrunt installed!!!"
 	sleep 3
 	menu
 	elif [[ `cat /etc/os-release | grep 'Rhel\|ID_LIKE=centos\|Centos\|ID_LIKE=rhel'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Yum detected installing Helm.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Yum detected installing Helm.........."
 	sleep 1
 	curl -o terragrunt https://github.com/gruntwork-io/terragrunt/releases/download/v0.38.6/terragrunt_linux_arm64
 	sudo chmod u+x terragrunt && sudo mv terragrunt /usr/local/bin/terragrunt && echo ${RED} "Terragrunt installed!!!"
 	sleep 3
 	menu
 	elif [[ `cat /etc/os-release | grep 'ID="amzn"'` ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Yum detected installing Helm.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Yum detected installing Helm.........."
 	sleep 1
 	curl -o terragrunt https://github.com/gruntwork-io/terragrunt/releases/download/v0.38.6/terragrunt_linux_arm64
 	sudo chmod u+x terragrunt && sudo mv terragrunt /usr/local/bin/terragrunt && echo ${RED} "Terragrunt installed!!!"
 	sleep 3
 	menu
 	elif [[ "$(uname)" == "Darwin" ]]; then
-	echo -e "\n${GREEN}[${WHITE}+${GREENS}]${GREENS} Mac OS detected installing Helm.........."
+	echo -e "\n${RED}[${WHITE}+${RED}]${RED} Mac OS detected installing Helm.........."
 	sleep 1
 	curl -o terragrunt https://github.com/gruntwork-io/terragrunt/releases/download/v0.38.6/terragrunt_linux_arm64
 	chmod u+x terragrunt && sudo mv terragrunt /usr/local/bin/terragrunt && echo ${RED} "Terragrunt installed!!!"
